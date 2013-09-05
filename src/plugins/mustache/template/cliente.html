@@ -1,0 +1,48 @@
+<script id="grid" type="text/html">
+	<table class='table table-striped'>
+		<tr>
+			<th>Nome</th>
+			<th>Email</th>
+			<th style='width: 100px;'></th>
+		</tr>
+		{{#data}}
+			<tr id='ln_{{id}}'>
+				<td>{{name}}</td>
+				<td>{{email}}</td>
+				<td>
+					<div class="btn-group">
+					  	<button type="button" class="btn btn-default">Ação</button>
+					  	<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+					    	<span class="caret"></span>
+					  	</button>
+						<ul class="dropdown-menu" role="menu">
+					    	<li><a href="javascript: void(0);" class='btn-cliente-manager' id='{{id}}'>Editar</a></li>
+					    	<li class="divider"></>
+					    	<li><a href="javascript: void(0);" class='btn-cliente-delete'  id='{{id}}'>Apagar</a></li>
+					  	</ul>
+					</div>
+				</td>
+			</tr>
+		{{/data}}
+	</table>
+</script>
+
+<script id="form" type="text/html"> 
+	<div>
+		<form role="form">
+		  	<div class="form-group">
+			    <label for="nome">Nome</label>
+			    <input type="text" class="form-control" id="nome" placeholder="Digite um nome" required='required'>
+		 	</div>
+		  	<div class="form-group">
+		    	<label for="email">Email address</label>
+		    	<input type="email" class="form-control" id="email" placeholder="Digite um email" required='required'>
+		  	</div>
+		  	<hr>
+		  	<div class='clearfix'>
+		  		<button type="submit" class="btn btn-default pull-right btn-success">Gravar</button>
+		  	</div>	
+		</form>
+	</div>
+	
+</script>
